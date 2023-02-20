@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<style>
+  body.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .form-check-label {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-check-input:checked+.form-check-label .fa-moon {
+    display: none;
+  }
+
+  .form-check-input:not(:checked)+.form-check-label .fa-sun {
+    display: none;
+  }
+
+  .form-switch {
+    float: right;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-12">
+        <div id="chat-window">
+          <div class="main-title">CHAT BOT USING CHAT-GPT</div>
+
+          <!-- Toggle checkbox with Sun and Moon Icon -->
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="dark-mode-switch">
+            <label class="form-check-label" for="dark-mode-switch">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </label>
+          </div>
+
+
+
+
+          <div id="chat-messages"></div>
+
+
+          <!--loader-->
+          <div id="loader">
+            <div class="loader-icon">
+              <i class="fas fa-spinner fa-spin"></i>
+            </div>
+          </div>
+          <!--end-->
+          <form id="chat-form">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="chat-input" autocomplete="off"
+                placeholder="Type your message here" required />
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>❤️ Made with love. Powered by OpenAI</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
